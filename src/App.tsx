@@ -1,10 +1,14 @@
-import Header from '@/components/Header'
+import { Outlet } from 'react-router-dom'
 
-function App() {
+//Layout
+import { Layout } from '@/layout/Layout'
+
+const App: React.FC = () => {
 	return (
-		<div className='app bg-tertiary h-screen w-[1200px] m-auto p-6 transition-colors duration-500 ease-in-out text-foreground'>
-			<Header />
-			main
+		<div className='bg-tertiary transition-colors duration-500 ease-in-out'>
+			<Layout>
+				<Outlet />
+			</Layout>
 		</div>
 	)
 }

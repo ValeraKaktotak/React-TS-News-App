@@ -11,10 +11,7 @@ interface ILogo {
 
 const Logo: FC<ILogo> = ({ className, text }) => {
 	return (
-		<Link
-			to={'/'}
-			className={cn('text-[32px] font-extrabold text-red-700', className)}
-		>
+		<Link to={'/'} className={cn('text-[32px] font-extrabold', className)}>
 			{text}
 		</Link>
 	)

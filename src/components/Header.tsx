@@ -2,12 +2,12 @@ import type { FC } from 'react'
 
 //Components
 import Logo from '@/components/common/Logo'
-import ThemeToggler from './common/ThemeToggler'
+import ThemeToggler from '@/components/common/ThemeToggler'
 
-const Header: FC = () => {
+export const Header: FC = () => {
 	return (
 		<section className='flex w-full items-center'>
-			<Logo text='My News' />
+			<Logo text='My News' className='text-primary' />
 			<div className='flex items-center'>
 				<ThemeToggler />
 				<div>Login</div>
@@ -15,4 +15,3 @@ const Header: FC = () => {
 		</section>
 	)
 }
-export default Header

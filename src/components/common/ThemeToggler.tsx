@@ -4,7 +4,6 @@ import { useState, type FC } from 'react'
 const ThemeToggler: FC = () => {
 	const [theme, setTheme] = useState<'light' | 'dark'>(localStorage.theme)
 
-	//Added theme scheme
 	if (
 		localStorage.theme === 'dark' ||
 		(!('theme' in localStorage) &&
