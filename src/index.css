@@ -15,23 +15,23 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 
+		--main-background: #e7e5e4;
 		--background: #ffffff;
 		--foreground: #0c0a09;
 		--primary: #e6723d;
 		--primary-foreground: #fafaf9;
 		--tertiary: #fcf2f4;
-		--border: #e7e5e4;
 		--input: #e7e5e4;
 		--ring: #f97316;
 	}
 
 	.dark {
+		--main-background: #292524;
 		--background: #0c0a09;
 		--foreground: #fafaf9;
 		--primary: #ea580c;
 		--primary-foreground: #fafaf9;
 		--tertiary: #303246;
-		--border: #292524;
 		--input: #292524;
 		--ring: #ea580c;
 	}

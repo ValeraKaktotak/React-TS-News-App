@@ -5,7 +5,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				border: 'var(--border)',
+				mainBackground: 'var(--main-background)',
 				input: 'var(--input)',
 				ring: 'var(--ring)',
 				background: 'var(--background)',

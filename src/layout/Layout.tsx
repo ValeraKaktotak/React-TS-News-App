@@ -9,7 +9,7 @@ type ILayout = {
 
 export const Layout: FC<ILayout> = ({ children }) => {
 	return (
-		<div className='app bg-border h-screen w-[1200px] m-auto p-6 transition-colors duration-500 ease-in-out text-foreground'>
+		<div className='app bg-mainBackground h-screen w-[1200px] m-auto p-6 transition-colors duration-500 ease-in-out text-foreground'>
 			<Header />
 			{children}
 		</div>
