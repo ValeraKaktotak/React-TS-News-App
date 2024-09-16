@@ -5,15 +5,14 @@ import { Link } from 'react-router-dom'
 import { cn } from '@/libs/utils'
 
 interface ILogo {
-	className?: string
-	text: string
+  className?: string
+  text: string
 }
 
-const Logo: FC<ILogo> = ({ className, text }) => {
-	return (
-		<Link to={'/'} className={cn('text-[32px] font-extrabold', className)}>
-			{text}
-		</Link>
-	)
+export const Logo: FC<ILogo> = ({ className, text }) => {
+  return (
+    <Link to={'/'} className={cn('text-[32px] font-extrabold', className)}>
+      {text}
+    </Link>
+  )
 }
-export default Logo
