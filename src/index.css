@@ -5,34 +5,48 @@
 @tailwind utilities;
 
 @layer base {
-	:root {
-		font-family: Sen, system-ui, Avenir, Helvetica, Arial, sans-serif;
-		line-height: 1.5;
-		font-weight: 400;
+  :root {
+    font-family: Sen, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 
-		font-synthesis: none;
-		text-rendering: optimizeLegibility;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-		--main-background: #e7e5e4;
-		--background: #ffffff;
-		--foreground: #0c0a09;
-		--primary: #e6723d;
-		--primary-foreground: #fafaf9;
-		--tertiary: #fcf2f4;
-		--input: #e7e5e4;
-		--ring: #f97316;
-	}
+    --main-background: #e7e5e4;
+    --background: #ffffff;
+    --foreground: #0c0a09;
+    --primary: #e6723d;
+    --primary-foreground: #fafaf9;
+    --tertiary: #fcf2f4;
+    --input: #e7e5e4;
+    --ring: #f97316;
+  }
 
-	.dark {
-		--main-background: #292524;
-		--background: #0c0a09;
-		--foreground: #fafaf9;
-		--primary: #ea580c;
-		--primary-foreground: #fafaf9;
-		--tertiary: #303246;
-		--input: #292524;
-		--ring: #ea580c;
-	}
+  .dark {
+    --main-background: #292524;
+    --background: #0c0a09;
+    --foreground: #fafaf9;
+    --primary: #ea580c;
+    --primary-foreground: #fafaf9;
+    --tertiary: #303246;
+    --input: #292524;
+    --ring: #ea580c;
+  }
+}
+
+.swiper-bullet {
+  display: inline-block;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
+  background-color: var(--main-background);
+  border-radius: 100%;
+}
+
+.swiper-bullet-active {
+  background-color: var(--primary);
 }
