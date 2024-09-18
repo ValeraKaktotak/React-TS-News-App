@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules'
+import { Autoplay, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 //Swiper styles
@@ -25,14 +25,7 @@ export const Slider: FC<ISlider> = ({ className }) => {
       )}
     >
       <Swiper
-        effect={'coverflow'}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true
-        }}
+        loop={true}
         centeredSlides={true}
         spaceBetween={20}
         pagination={{
@@ -44,7 +37,7 @@ export const Slider: FC<ISlider> = ({ className }) => {
           delay: 4000,
           stopOnLastSlide: false
         }}
-        modules={[Pagination, Autoplay, EffectCoverflow]}
+        modules={[Pagination, Autoplay]}
         breakpoints={{
           320: {
             slidesPerView: 1
