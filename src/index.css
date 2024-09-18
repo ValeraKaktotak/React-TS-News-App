@@ -20,6 +20,7 @@
     --foreground: #0c0a09;
     --primary: #e6723d;
     --primary-foreground: #fafaf9;
+    --primary-opacity-50: rgba(230, 114, 61, 0.5);
     --tertiary: #fcf2f4;
     --input: #e7e5e4;
     --ring: #f97316;
@@ -31,9 +32,27 @@
     --foreground: #fafaf9;
     --primary: #ea580c;
     --primary-foreground: #fafaf9;
+    --primary-opacity-50: rgba(234, 88, 12, 0.5);
     --tertiary: #303246;
     --input: #292524;
     --ring: #ea580c;
+  }
+}
+
+@layer utilities {
+  .shadow-foreground-md {
+    --tw-shadow-color: var(--foreground);
+    --tw-shadow: var(--tw-shadow-colored);
+    box-shadow:
+      0 4px 6px -1px var(--tw-shadow-color),
+      0 2px 4px -1px var(--tw-shadow-color);
+  }
+  .shadow-primary-md {
+    --tw-shadow-color: var(--primary-opacity-50);
+    --tw-shadow: var(--tw-shadow-colored);
+    box-shadow:
+      0 4px 6px -1px var(--tw-shadow-color),
+      0 2px 4px -1px var(--tw-shadow-color);
   }
 }
 
@@ -50,3 +69,5 @@
 .swiper-bullet-active {
   background-color: var(--primary);
 }
+
+/* 'rounded-lg px-4 py-2 font-semibold transition duration-150 ease-in-out' */

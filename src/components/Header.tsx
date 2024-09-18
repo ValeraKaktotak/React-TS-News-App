@@ -9,7 +9,7 @@ import { SearchComponent } from './common/SearchComponent'
 export const Header: FC = () => {
   return (
     <section className='flex w-full items-center gap-10'>
-      <Logo text='My News' className='text-primary' />
+      <Logo text='Orange News' className='text-primary' />
       <div className='flex flex-1 items-center justify-between gap-10'>
         <SearchComponent />
         <div className='flex items-center'>
