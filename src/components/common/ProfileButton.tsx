@@ -39,9 +39,12 @@ export const ProfileButton: FC = () => {
           </Button>
         </Link>
       ) : (
-        <div className='pointer-events-none inline-flex h-10 w-[105px] items-center justify-center whitespace-nowrap rounded-md bg-gray-500 bg-primary px-4 py-2 text-sm font-medium text-primary-foreground opacity-50'>
+        <Button
+          variant='disabled'
+          className='flex h-10 w-[105px] items-center justify-center rounded-md px-4 py-2'
+        >
           <Loader className='h-5 w-5 animate-spin' />
-        </div>
+        </Button>
       )}
     </>
   )

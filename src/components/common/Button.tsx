@@ -1,18 +1,19 @@
-import type { FC } from 'react'
+import type { FC, ReactNode } from 'react'
 
 //Utils
 import { cn } from '@/libs/utils'
+import React from 'react'
 
 const buttonVariants = (variant: string) => {
   switch (variant) {
     case 'default': {
-      return 'bg-primary hover:shadow-primary-md'
+      return 'shadow-foreground-md bg-primary hover:shadow-primary-md'
     }
     case 'disabled': {
       return 'bg-gray-400 pointer-events-none'
     }
     case 'outline': {
-      return 'bg-transparent'
+      return 'shadow-foreground-md bg-transparent'
     }
     default:
       return ''
@@ -21,16 +22,21 @@ const buttonVariants = (variant: string) => {
 
 interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
+  onClick?: VoidFunction
   type?: 'button' | 'submit' | 'reset'
   text?: string
   variant?: 'default' | 'disabled' | 'outline'
+  children?: ReactNode
 }
 
 export const Button: FC<IButton> = ({
   className,
+  children,
+  onClick,
   type = 'button',
   text = 'Button text',
-  variant = 'default'
+  variant = 'default',
+  ...props
 }) => {
   const res = buttonVariants(variant)
 
@@ -38,12 +44,15 @@ export const Button: FC<IButton> = ({
     <button
       type={type}
       className={cn(
-        'shadow-foreground-md inline-flex items-center justify-center whitespace-nowrap rounded-md p-2 text-sm font-medium shadow-md ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:translate-y-[1px] disabled:pointer-events-none disabled:bg-gray-500 disabled:opacity-50',
+        'duration-400 inline-flex items-center justify-center whitespace-nowrap rounded-md p-2 text-sm font-medium shadow-md ring-offset-background transition-all active:translate-y-[1px]',
         res,
         className
       )}
+      onClick={onClick}
+      {...props}
     >
-      {text}
+      {!children && text}
+      {children}
     </button>
   )
 }
