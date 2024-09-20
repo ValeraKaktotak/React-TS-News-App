@@ -27,19 +27,9 @@ export const SidebarItem: FC<ISidebarItem> = ({ className, img, title }) => {
     >
       <div className='group h-full w-full bg-gray-500/70 transition-all duration-500 hover:bg-transparent'>
         <p className='absolute left-0 top-1/2 line-clamp-1 -translate-y-1/2 px-2 transition-all duration-500 group-hover:opacity-0'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi enim
-          inventore fuga, dolorum facere libero harum iste asperiores minus
-          totam accusantium officia distinctio, deleniti veniam! Nihil
-          aspernatur ipsam possimus repellendus.
+          {title}
         </p>
       </div>
     </Link>
   )
 }
-
-/* <p className='absolute left-0 top-1/2 line-clamp-1 -translate-y-1/2 bg-gray-500/70 px-2 transition-all duration-500 group-hover:opacity-0'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi enim
-        inventore fuga, dolorum facere libero harum iste asperiores minus totam
-        accusantium officia distinctio, deleniti veniam! Nihil aspernatur ipsam
-        possimus repellendus.
-      </p> */
