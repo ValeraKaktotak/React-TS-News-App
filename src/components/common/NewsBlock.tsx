@@ -22,7 +22,7 @@ export const NewsBlock: FC<INewsBlock> = ({ className }) => {
   )
   const dispatch = useAppDispatch()
 
-  console.log(news)
+  console.log(news, 'isLoading - ' + isLoading)
 
   useEffect(() => {
     //only 500 real requests
