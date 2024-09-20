@@ -6,12 +6,32 @@ import { fetchNews } from './ActionCreators'
 
 interface INewsState {
   news: ISingleNews | null
+  singleNews: ISingleNews['data'] | null
+  categories: {
+    general: ISingleNews[]
+    business: ISingleNews[]
+    entertainment: ISingleNews[]
+    health: ISingleNews[]
+    science: ISingleNews[]
+    sports: ISingleNews[]
+    technology: ISingleNews[]
+  }
   isLoading: boolean
   error: string | undefined
 }
 
 const initialState: INewsState = {
   news: null,
+  singleNews: null,
+  categories: {
+    general: [],
+    business: [],
+    entertainment: [],
+    health: [],
+    science: [],
+    sports: [],
+    technology: []
+  },
   isLoading: false,
   error: ''
 }
