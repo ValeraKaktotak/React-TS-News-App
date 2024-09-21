@@ -17,10 +17,10 @@ interface INewsBlock {
 }
 
 export const NewsBlock: FC<INewsBlock> = ({ className }) => {
+  const dispatch = useAppDispatch()
   // const { news, isLoading, error } = useAppSelector(
   //   (state) => state.newsReducer
   // )
-  const dispatch = useAppDispatch()
 
   useEffect(() => {
     //only 500 real requests
@@ -29,6 +29,10 @@ export const NewsBlock: FC<INewsBlock> = ({ className }) => {
     //mock data
     dispatch(fetchMockNews())
   }, [dispatch])
+
+  // if (isLoading) {
+  //   return <div>Loading ...</div>
+  // }
 
   return (
     <section

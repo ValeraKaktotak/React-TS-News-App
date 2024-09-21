@@ -72,15 +72,6 @@ export const Slider: FC<ISlider> = ({ className }) => {
         <SwiperSlide className='flex justify-center'>
           <SliderItem fetchedUrl={`bg-[url('@/assets/images/no-image.png')]`} />
         </SwiperSlide>
-        <SwiperSlide className='flex justify-center'>
-          <SliderItem fetchedUrl={`bg-[url('@/assets/images/no-image.png')]`} />
-        </SwiperSlide>
-        <SwiperSlide className='flex justify-center'>
-          <SliderItem fetchedUrl={`bg-[url('@/assets/images/no-image.png')]`} />
-        </SwiperSlide>
-        <SwiperSlide className='flex justify-center'>
-          <SliderItem fetchedUrl={`bg-[url('@/assets/images/no-image.png')]`} />
-        </SwiperSlide>
       </Swiper>
     </div>
   )

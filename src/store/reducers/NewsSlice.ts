@@ -1,43 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 //Types
-import type { INews, ISingleNews } from '@/types/news-types'
+import type { INews } from '@/types/news-types'
 
 //ActionCreations
 import { fetchNews } from '@/store/reducers/NewsActionCreators'
 
 interface INewsState {
   news: INews | null
-  singleNews: ISingleNews | null
-  hotNews: ISingleNews[] | []
-  sliderNews: ISingleNews[] | []
-  categories: {
-    general: ISingleNews[]
-    business: ISingleNews[]
-    entertainment: ISingleNews[]
-    health: ISingleNews[]
-    science: ISingleNews[]
-    sports: ISingleNews[]
-    technology: ISingleNews[]
-  }
   isLoading: boolean
   error: string | undefined
 }
 
 const initialState: INewsState = {
   news: null,
-  singleNews: null,
-  hotNews: [],
-  sliderNews: [],
-  categories: {
-    general: [],
-    business: [],
-    entertainment: [],
-    health: [],
-    science: [],
-    sports: [],
-    technology: []
-  },
   isLoading: false,
   error: ''
 }
@@ -56,9 +32,6 @@ export const newsSlice = createSlice({
     newsMockFetchingError(state, action) {
       state.error = action.payload
       state.isLoading = false
-    },
-    categoriesFetch(state, action) {
-      state.categories = action.payload
     }
   },
   extraReducers: (builder) => {
