@@ -5,7 +5,7 @@ import { cn } from '@/libs/utils'
 
 //State
 //import { fetchNews } from '@/store/reducers/ActionCreators'
-import { fetchMockNews } from '@/store/reducers/ActionCreators'
+import { fetchMockNews } from '@/store/reducers/NewsActionCreators'
 import { useAppDispatch, useAppSelector } from '@/store/store'
 
 //Components

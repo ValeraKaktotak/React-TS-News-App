@@ -1,12 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 //Types
-import { ISingleNews } from '@/types/news-types'
-import { fetchNews } from './ActionCreators'
+import type { INews, ISingleNews } from '@/types/news-types'
+
+//ActionCreations
+import { fetchNews } from '@/store/reducers/NewsActionCreators'
 
 interface INewsState {
-  news: ISingleNews | null
-  singleNews: ISingleNews['data'] | null
+  news: INews | null
+  singleNews: ISingleNews | null
+  hotNews: ISingleNews[] | []
+  sliderNews: ISingleNews[] | []
   categories: {
     general: ISingleNews[]
     business: ISingleNews[]
@@ -23,6 +27,8 @@ interface INewsState {
 const initialState: INewsState = {
   news: null,
   singleNews: null,
+  hotNews: [],
+  sliderNews: [],
   categories: {
     general: [],
     business: [],
@@ -54,14 +60,11 @@ export const newsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(
-        fetchNews.fulfilled,
-        (state, action: PayloadAction<ISingleNews>) => {
-          state.isLoading = false
-          state.error = ''
-          state.news = action.payload
-        }
-      )
+      .addCase(fetchNews.fulfilled, (state, action: PayloadAction<INews>) => {
+        state.isLoading = false
+        state.error = ''
+        state.news = action.payload
+      })
       .addCase(fetchNews.pending, (state) => {
         state.isLoading = true
       })
