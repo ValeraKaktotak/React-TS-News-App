@@ -11,12 +11,17 @@ import { mockNews } from '@/services/mockData'
 //Store
 import { newsSlice } from '@/store/reducers/NewsSlice'
 
+//Helpers
+import { newsCategoriesSort } from '@/libs/helpers/newsCategoriesSort'
+
 // RTK asyncThunk
 export const fetchNews = createAsyncThunk(
   'news/fetchAll',
   async (_, thunkAPI) => {
     try {
       const response = await newsAPI.get<INews>('')
+      const cats = newsCategoriesSort(response.data.data)
+      thunkAPI.dispatch(newsSlice.actions.categoriesFetch(cats))
       return response.data
     } catch (error) {
       console.log(error)
@@ -31,6 +36,8 @@ export const fetchMockNews = () => (dispatch: AppDispatch) => {
     dispatch(newsSlice.actions.newsMockFetching())
     setTimeout(() => {
       const response = mockNews
+      const cats = newsCategoriesSort(response.data)
+      dispatch(newsSlice.actions.categoriesFetch(cats))
       dispatch(newsSlice.actions.newsMockFetchingSuccess(response))
     }, 1500)
   } catch (error) {

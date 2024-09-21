@@ -3,12 +3,12 @@ export interface INews {
   data: ISingleNews[]
 }
 export interface ISingleNews {
-  author: string
+  author: string | null
   title: string
   description: string
   url: string
   source: string
-  image: string
+  image: string | null
   category: string
   language: string
   country: string

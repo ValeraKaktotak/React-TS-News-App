@@ -6,7 +6,7 @@ import { cn } from '@/libs/utils'
 //State
 //import { fetchNews } from '@/store/reducers/ActionCreators'
 import { fetchMockNews } from '@/store/reducers/NewsActionCreators'
-import { useAppDispatch, useAppSelector } from '@/store/store'
+import { useAppDispatch } from '@/store/store'
 
 //Components
 import { NewsItem } from './NewsItem'
@@ -17,12 +17,10 @@ interface INewsBlock {
 }
 
 export const NewsBlock: FC<INewsBlock> = ({ className }) => {
-  const { news, isLoading, error } = useAppSelector(
-    (state) => state.newsReducer
-  )
+  // const { news, isLoading, error } = useAppSelector(
+  //   (state) => state.newsReducer
+  // )
   const dispatch = useAppDispatch()
-
-  console.log(news, 'isLoading - ' + isLoading)
 
   useEffect(() => {
     //only 500 real requests
