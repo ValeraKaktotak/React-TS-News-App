@@ -12,11 +12,19 @@ import { cn } from '@/libs/utils'
 //Components
 import { SliderItem } from '@/components/common/SliderItem'
 
+//Selectors
+import { getSliderNews } from '@/store/reducers/NewsSelectors'
+import { useAppSelector } from '@/store/store'
+import { Skeleton } from './Skeleton'
+
 interface ISlider {
   className?: string
 }
 
 export const Slider: FC<ISlider> = ({ className }) => {
+  const sliderNews = useAppSelector(getSliderNews)
+  console.log(sliderNews)
+
   return (
     <div
       className={cn(
@@ -24,55 +32,48 @@ export const Slider: FC<ISlider> = ({ className }) => {
         className
       )}
     >
-      <Swiper
-        loop={true}
-        centeredSlides={true}
-        spaceBetween={20}
-        pagination={{
-          clickable: true,
-          bulletClass: 'swiper-bullet',
-          bulletActiveClass: 'swiper-bullet-active'
-        }}
-        autoplay={{
-          delay: 4000,
-          stopOnLastSlide: false
-        }}
-        modules={[Pagination, Autoplay]}
-        breakpoints={{
-          320: {
-            slidesPerView: 1
-          },
-          440: {
-            slidesPerView: 2
-          },
-          768: {
-            slidesPerView: 4
-          },
-          1024: {
-            slidesPerView: 5
-          }
-        }}
-        className='mySwiper h-60 cursor-pointer p-4 pb-10 text-white'
-      >
-        <SwiperSlide className='flex justify-center'>
-          <SliderItem fetchedUrl={`bg-[url('@/assets/images/no-image.png')]`} />
-        </SwiperSlide>
-        <SwiperSlide className='flex justify-center'>
-          <SliderItem fetchedUrl={`bg-[url('@/assets/images/no-image.png')]`} />
-        </SwiperSlide>
-        <SwiperSlide className='flex justify-center'>
-          <SliderItem fetchedUrl={`bg-[url('@/assets/images/no-image.png')]`} />
-        </SwiperSlide>
-        <SwiperSlide className='flex justify-center'>
-          <SliderItem fetchedUrl={`bg-[url('@/assets/images/no-image.png')]`} />
-        </SwiperSlide>
-        <SwiperSlide className='flex justify-center'>
-          <SliderItem fetchedUrl={`bg-[url('@/assets/images/no-image.png')]`} />
-        </SwiperSlide>
-        <SwiperSlide className='flex justify-center'>
-          <SliderItem fetchedUrl={`bg-[url('@/assets/images/no-image.png')]`} />
-        </SwiperSlide>
-      </Swiper>
+      {sliderNews ? (
+        <Swiper
+          loop={true}
+          centeredSlides={true}
+          spaceBetween={20}
+          pagination={{
+            clickable: true,
+            bulletClass: 'swiper-bullet',
+            bulletActiveClass: 'swiper-bullet-active'
+          }}
+          autoplay={{
+            delay: 4000,
+            stopOnLastSlide: false
+          }}
+          modules={[Pagination, Autoplay]}
+          breakpoints={{
+            320: {
+              slidesPerView: 1
+            },
+            440: {
+              slidesPerView: 2
+            },
+            768: {
+              slidesPerView: 4
+            },
+            1024: {
+              slidesPerView: 5
+            }
+          }}
+          className='mySwiper h-60 cursor-pointer p-4 pb-10 text-white'
+        >
+          {sliderNews &&
+            sliderNews?.length > 0 &&
+            sliderNews.map((news, i) => (
+              <SwiperSlide key={i} className='flex justify-center'>
+                <SliderItem fetchedUrl={news.image} />
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      ) : (
+        <Skeleton spinnerSize='8' className='h-[240px] w-full' />
+      )}
     </div>
   )
 }

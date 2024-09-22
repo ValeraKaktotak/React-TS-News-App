@@ -1,15 +1,16 @@
 import type { FC } from 'react'
+import { Link } from 'react-router-dom'
 
 //Utils
 import { cn } from '@/libs/utils'
 
 //Store
+import { getCategories } from '@/store/reducers/NewsSelectors'
 import { useAppSelector } from '@/store/store'
 
 //Components
-import { getCategories } from '@/store/reducers/NewsSelectors'
-import { Button } from './Button'
-import { Skeleton } from './Skeleton'
+import { Button } from '@/components/common/Button'
+import { Skeleton } from '@/components/common/Skeleton'
 
 interface ICategoriesBlock {
   className?: string
@@ -17,7 +18,6 @@ interface ICategoriesBlock {
 
 export const CategoriesBlock: FC<ICategoriesBlock> = ({ className }) => {
   const categories = useAppSelector(getCategories)
-  console.log(categories)
 
   return (
     <div
@@ -25,7 +25,9 @@ export const CategoriesBlock: FC<ICategoriesBlock> = ({ className }) => {
     >
       {categories ? (
         Object.entries(categories).map(([key]) => (
-          <Button key={key} text={key} />
+          <Link key={key} to='#'>
+            <Button text={key} />
+          </Link>
         ))
       ) : (
         <Skeleton spinnerSize='8' className='h-9 w-full max-w-[800px]' />

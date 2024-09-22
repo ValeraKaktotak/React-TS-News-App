@@ -1,8 +1,8 @@
+import { Loader } from 'lucide-react'
 import type { FC } from 'react'
 
 //Utils
 import { cn } from '@/libs/utils'
-import { Loader } from 'lucide-react'
 
 interface ISkeleton {
   className?: string
