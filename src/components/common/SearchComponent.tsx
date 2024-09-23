@@ -7,7 +7,7 @@ import { useClickAway, useDebounce } from 'react-use'
 import { cn } from '@/libs/utils'
 
 //Types
-import { ISingleNews } from '@/types/news-types'
+import type { INews } from '@/types/news-types'
 
 interface ISearchComponent {
   className?: string
@@ -16,7 +16,7 @@ interface ISearchComponent {
 export const SearchComponent: FC<ISearchComponent> = ({ className }) => {
   const [focused, setFocused] = useState<boolean>(false)
   const [searchQuery, setSearchQuery] = useState<string>('')
-  const [searchedNews, setSearchedNews] = useState<ISingleNews | null>(null)
+  const [searchedNews, setSearchedNews] = useState<INews | null>(null)
 
   const ref = useRef(null)
 
@@ -33,7 +33,7 @@ export const SearchComponent: FC<ISearchComponent> = ({ className }) => {
   useDebounce(
     async () => {
       try {
-        console.log(searchQuery)
+        //console.log(searchQuery)
         //const res = await fetchSearchNews(searchQuery)
         //setProducts(res)
       } catch (error) {

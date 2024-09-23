@@ -1,11 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 //Types
-import { ISingleNews } from '@/types/news-types'
-import { fetchNews } from './ActionCreators'
+import type { INews } from '@/types/news-types'
+
+//ActionCreations
+import { fetchNews } from '@/store/reducers/NewsActionCreators'
 
 interface INewsState {
-  news: ISingleNews | null
+  news: INews | null
   isLoading: boolean
   error: string | undefined
 }
@@ -34,14 +36,11 @@ export const newsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(
-        fetchNews.fulfilled,
-        (state, action: PayloadAction<ISingleNews>) => {
-          state.isLoading = false
-          state.error = ''
-          state.news = action.payload
-        }
-      )
+      .addCase(fetchNews.fulfilled, (state, action: PayloadAction<INews>) => {
+        state.isLoading = false
+        state.error = ''
+        state.news = action.payload
+      })
       .addCase(fetchNews.pending, (state) => {
         state.isLoading = true
       })

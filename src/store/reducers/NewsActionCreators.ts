@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 
 //Types
 import type { AppDispatch } from '@/store/store'
-import type { ISingleNews } from '@/types/news-types'
+import type { INews } from '@/types/news-types'
 
 //API
 import { newsAPI } from '@/services/instanceAPI'
@@ -16,7 +16,7 @@ export const fetchNews = createAsyncThunk(
   'news/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const response = await newsAPI.get<ISingleNews>('')
+      const response = await newsAPI.get<INews>('')
       return response.data
     } catch (error) {
       console.log(error)
@@ -26,21 +26,19 @@ export const fetchNews = createAsyncThunk(
 )
 
 //Mock data thunk
-export const fetchMockNews = () => {
-  return (dispatch: AppDispatch) => {
-    try {
-      dispatch(newsSlice.actions.newsMockFetching())
-      setTimeout(() => {
-        const response = mockNews
-        dispatch(newsSlice.actions.newsMockFetchingSuccess(response))
-      }, 1500)
-    } catch (error) {
-      console.log(error)
-      dispatch(
-        newsSlice.actions.newsMockFetchingError(
-          'Some error with news downloading'
-        )
+export const fetchMockNews = () => (dispatch: AppDispatch) => {
+  try {
+    dispatch(newsSlice.actions.newsMockFetching())
+    setTimeout(() => {
+      const response = mockNews
+      dispatch(newsSlice.actions.newsMockFetchingSuccess(response))
+    }, 1500)
+  } catch (error) {
+    console.log(error)
+    dispatch(
+      newsSlice.actions.newsMockFetchingError(
+        'Some error with mock news downloading'
       )
-    }
+    )
   }
 }

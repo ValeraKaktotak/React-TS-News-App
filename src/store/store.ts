@@ -1,6 +1,8 @@
-import newsReducer from '@/store/reducers/NewsSlice'
 import { configureStore } from '@reduxjs/toolkit'
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
+
+//Reducers-Slices
+import newsReducer from '@/store/reducers/NewsSlice'
 
 export const store = configureStore({
   reducer: {

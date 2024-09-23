@@ -3,26 +3,20 @@ import { useEffect, type FC } from 'react'
 //Utils
 import { cn } from '@/libs/utils'
 
-//State
 //import { fetchNews } from '@/store/reducers/ActionCreators'
-import { fetchMockNews } from '@/store/reducers/ActionCreators'
-import { useAppDispatch, useAppSelector } from '@/store/store'
+import { fetchMockNews } from '@/store/reducers/NewsActionCreators'
+import { useAppDispatch } from '@/store/store'
 
 //Components
-import { NewsItem } from './NewsItem'
-import { Sidebar } from './Sidebar'
+import { MainNewsBlock } from '@/components/common/MainNewsBlock'
+import { Sidebar } from '@/components/common/Sidebar'
 
 interface INewsBlock {
   className?: string
 }
 
 export const NewsBlock: FC<INewsBlock> = ({ className }) => {
-  const { news, isLoading, error } = useAppSelector(
-    (state) => state.newsReducer
-  )
   const dispatch = useAppDispatch()
-
-  console.log(news)
 
   useEffect(() => {
     //only 500 real requests
@@ -40,15 +34,10 @@ export const NewsBlock: FC<INewsBlock> = ({ className }) => {
       )}
     >
       {/*Main news block */}
-      <div className='grid grid-cols-2 gap-4 rounded-lg border border-primary bg-tertiary p-4'>
-        <NewsItem />
-        <NewsItem />
-        <NewsItem />
-        <NewsItem />
-      </div>
+      <MainNewsBlock />
 
       {/*Sidebar (latest news) */}
-      <Sidebar className='md:flex' />
+      <Sidebar />
     </section>
   )
 }

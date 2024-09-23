@@ -1,21 +1,37 @@
 import type { FC } from 'react'
+import { Link } from 'react-router-dom'
 
 //Utils
 import { cn } from '@/libs/utils'
-import { Button } from './Button'
+
+//Store
+import { getCategories } from '@/store/reducers/NewsSelectors'
+import { useAppSelector } from '@/store/store'
+
+//Components
+import { Button } from '@/components/common/Button'
+import { Skeleton } from '@/components/common/Skeleton'
 
 interface ICategoriesBlock {
   className?: string
 }
 
 export const CategoriesBlock: FC<ICategoriesBlock> = ({ className }) => {
+  const categories = useAppSelector(getCategories)
+
   return (
-    <div className={cn('mt-10 flex justify-center gap-10', className)}>
-      <Button text='Category 1' />
-      <Button variant='disabled' text='Category 1' />
-      <Button variant='outline' text='Category 1' />
-      <Button text='Category 1' />
-      <Button text='Category 1' />
+    <div
+      className={cn('mt-10 flex flex-wrap justify-center gap-10', className)}
+    >
+      {categories ? (
+        Object.entries(categories).map(([key]) => (
+          <Link key={key} to='#'>
+            <Button text={key} />
+          </Link>
+        ))
+      ) : (
+        <Skeleton spinnerSize='8' className='h-9 w-full max-w-[800px]' />
+      )}
     </div>
   )
 }

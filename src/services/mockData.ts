@@ -14,7 +14,7 @@ export const mockNews = {
       url: 'https://www.rbcasting.com/eventi/2024/09/20/alice-nella-citta-2024-ecco-i-primi-titoli/',
       source: 'rbcasting',
       image: null,
-      category: 'general',
+      category: 'business',
       language: 'it',
       country: 'it',
       published_at: '2024-09-20T14:49:56+00:00'
@@ -27,7 +27,7 @@ export const mockNews = {
       url: 'http://cubasi.cu/en/node/375296',
       source: 'CubaSi.cu',
       image: null,
-      category: 'general',
+      category: 'entertainment',
       language: 'en',
       country: 'cu',
       published_at: '2024-09-20T14:49:39+00:00'
@@ -54,7 +54,7 @@ export const mockNews = {
       url: 'https://www.tagesanzeiger.ch/harrods-frauen-werfen-al-fayed-sexuelle-uebergriffe-vor-413868650442',
       source: 'Tages Anzeiger',
       image: 'https://cdn.unitycms.io/images/Bc6s3Hw44RPBiA3WYQ0sed.jpg',
-      category: 'general',
+      category: 'health',
       language: 'de',
       country: 'ch',
       published_at: '2024-09-20T14:49:34+00:00'
@@ -123,7 +123,7 @@ export const mockNews = {
       url: 'https://www.que.es/2024/09/20/ana-duato-evita-la-condena-mas-severa/',
       source: 'que',
       image: null,
-      category: 'general',
+      category: 'science',
       language: 'es',
       country: 'es',
       published_at: '2024-09-20T14:49:18+00:00'
@@ -165,7 +165,7 @@ export const mockNews = {
       source: 'Post',
       image:
         'https://nypost.com/wp-content%2Fuploads%2Fsites%2F2%2F2024%2F09%2FMI_COMPARE_WP.jpg?quality%3D90%26strip%3Dall',
-      category: 'general',
+      category: 'sports',
       language: 'en',
       country: 'zm',
       published_at: '2024-09-20T14:49:10+00:00'
@@ -207,7 +207,7 @@ export const mockNews = {
       url: 'https://www.nme.com/news/music/previously-unknown-mozart-composition-discovered-in-german-library-3795681?utm_source=rss\u0026utm_medium=rss\u0026utm_campaign=previously-unknown-mozart-composition-discovered-in-german-library',
       source: 'nme',
       image: null,
-      category: 'general',
+      category: 'technology',
       language: 'en',
       country: 'us',
       published_at: '2024-09-20T14:49:03+00:00'
@@ -221,7 +221,7 @@ export const mockNews = {
       url: 'https://www.marketbeat.com/stock-ideas/analysts-predict-85-upside-for-wave-life-sciences-after-rate-cut/',
       source: 'lulegacy',
       image: null,
-      category: 'general',
+      category: 'technology',
       language: 'en',
       country: 'us',
       published_at: '2024-09-20T14:49:00+00:00'
@@ -234,7 +234,7 @@ export const mockNews = {
       url: 'https://www.reviewjournal.com/livewell/where-do-food-cravings-come-from-and-can-we-stop-them-3173595/',
       source: 'lvrj',
       image: null,
-      category: 'general',
+      category: 'technology',
       language: 'en',
       country: 'us',
       published_at: '2024-09-20T14:49:00+00:00'
@@ -262,7 +262,7 @@ export const mockNews = {
       url: 'https://www.boston.com/sports/morning-sports-update/2024/09/20/patriots-starting-quarterback-drake-maye-jerod-mayo-jacoby-brissett/',
       source: 'boston',
       image: null,
-      category: 'general',
+      category: 'sports',
       language: 'en',
       country: 'us',
       published_at: '2024-09-20T14:49:00+00:00'
@@ -291,7 +291,7 @@ export const mockNews = {
       url: 'https://www.businesstoday.in/latest/trends/story/most-students-motivated-by-fancy-degree-and-western-lifestyle-netizens-react-after-iim-alumnus-says-indians-spend-60-retirement-money-on-childs-foreign-education-446847-2024-09-20?utm_source=rssfeed',
       source: 'businesstoday',
       image: null,
-      category: 'general',
+      category: 'sports',
       language: 'en',
       country: 'in',
       published_at: '2024-09-20T14:48:52+00:00'
@@ -334,7 +334,7 @@ export const mockNews = {
       url: 'https://tempo.com.ph/2024/09/20/dionisios-hot-hands-tow-magnolia-to-quarters-nlex-boosts-own-bid/',
       source: 'tempo',
       image: null,
-      category: 'general',
+      category: 'science',
       language: 'en',
       country: 'ph',
       published_at: '2024-09-20T14:48:43+00:00'
@@ -364,7 +364,7 @@ export const mockNews = {
       source: 'Gazeta.uz',
       image:
         'https://www.gazeta.uz/media/img/2021/11/JrcSj216365407886203_b.jpg',
-      category: 'general',
+      category: 'science',
       language: 'ru',
       country: 'uz',
       published_at: '2024-09-20T14:48:36+00:00'
@@ -406,7 +406,7 @@ export const mockNews = {
       source: 'Der Tagesspiegel',
       image:
         'https://www.tagesspiegel.de/berlin/images/cdu-landeschef-redmann-und-parteivorsitzender-merz/alternates/BASE_4_3_W220/cdu-landeschef-redmann-und-parteivorsitzender-merz.jpeg',
-      category: 'general',
+      category: 'science',
       language: 'de',
       country: 'de',
       published_at: '2024-09-20T14:48:29+00:00'
@@ -448,7 +448,7 @@ export const mockNews = {
       url: 'https://stluciastar.com/tt-contractor-gets-another-st-lucia-job/',
       source: 'St. Lucia Star',
       image: null,
-      category: 'general',
+      category: 'health',
       language: 'en',
       country: 'lc',
       published_at: '2024-09-20T14:48:20+00:00'
@@ -475,7 +475,7 @@ export const mockNews = {
       url: 'https://www.etfdailynews.com/2024/09/20/vanguard-personalized-indexing-management-llc-buys-738-shares-of-dollar-general-co-nysedg/',
       source: 'etfdailynews',
       image: null,
-      category: 'general',
+      category: 'health',
       language: 'en',
       country: 'us',
       published_at: '2024-09-20T14:48:17+00:00'
@@ -489,7 +489,7 @@ export const mockNews = {
       url: 'https://www.etfdailynews.com/2024/09/20/vanguard-personalized-indexing-management-llc-buys-5445-shares-of-crh-plc-nysecrh/',
       source: 'etfdailynews',
       image: null,
-      category: 'general',
+      category: 'entertainment',
       language: 'en',
       country: 'us',
       published_at: '2024-09-20T14:48:16+00:00'
@@ -503,7 +503,7 @@ export const mockNews = {
       url: 'https://www.etfdailynews.com/2024/09/20/korn-ferry-nysekfy-position-lifted-by-blair-william-co-il/',
       source: 'etfdailynews',
       image: null,
-      category: 'general',
+      category: 'entertainment',
       language: 'en',
       country: 'us',
       published_at: '2024-09-20T14:48:16+00:00'
@@ -517,7 +517,7 @@ export const mockNews = {
       url: 'https://www.etfdailynews.com/2024/09/20/targa-resources-corp-nysetrgp-shares-purchased-by-vanguard-personalized-indexing-management-llc/',
       source: 'etfdailynews',
       image: null,
-      category: 'general',
+      category: 'entertainment',
       language: 'en',
       country: 'us',
       published_at: '2024-09-20T14:48:16+00:00'
@@ -950,7 +950,7 @@ export const mockNews = {
       url: 'https://www.americanbankingnews.com/2024/09/20/vanguard-personalized-indexing-management-llc-raises-stock-position-in-best-buy-co-inc-nysebby.html',
       source: 'americanbankingnews',
       image: null,
-      category: 'general',
+      category: 'business',
       language: 'en',
       country: 'us',
       published_at: '2024-09-20T14:47:53+00:00'
@@ -964,7 +964,7 @@ export const mockNews = {
       url: 'https://www.americanbankingnews.com/2024/09/20/vanguard-personalized-indexing-management-llc-increases-position-in-hdfc-bank-limited-nysehdb.html',
       source: 'americanbankingnews',
       image: null,
-      category: 'general',
+      category: 'business',
       language: 'en',
       country: 'us',
       published_at: '2024-09-20T14:47:53+00:00'
@@ -978,7 +978,7 @@ export const mockNews = {
       url: 'https://www.americanbankingnews.com/2024/09/20/vanguard-personalized-indexing-management-llc-has-3-48-million-holdings-in-digital-realty-trust-inc-nysedlr.html',
       source: 'americanbankingnews',
       image: null,
-      category: 'general',
+      category: 'business',
       language: 'en',
       country: 'us',
       published_at: '2024-09-20T14:47:52+00:00'
