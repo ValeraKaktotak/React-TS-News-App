@@ -3,14 +3,13 @@ import { useEffect, type FC } from 'react'
 //Utils
 import { cn } from '@/libs/utils'
 
-//State
 //import { fetchNews } from '@/store/reducers/ActionCreators'
 import { fetchMockNews } from '@/store/reducers/NewsActionCreators'
 import { useAppDispatch } from '@/store/store'
 
 //Components
-import { NewsItem } from './NewsItem'
-import { Sidebar } from './Sidebar'
+import { MainNewsBlock } from '@/components/common/MainNewsBlock'
+import { Sidebar } from '@/components/common/Sidebar'
 
 interface INewsBlock {
   className?: string
@@ -18,9 +17,6 @@ interface INewsBlock {
 
 export const NewsBlock: FC<INewsBlock> = ({ className }) => {
   const dispatch = useAppDispatch()
-  // const { news, isLoading, error } = useAppSelector(
-  //   (state) => state.newsReducer
-  // )
 
   useEffect(() => {
     //only 500 real requests
@@ -30,10 +26,6 @@ export const NewsBlock: FC<INewsBlock> = ({ className }) => {
     dispatch(fetchMockNews())
   }, [dispatch])
 
-  // if (isLoading) {
-  //   return <div>Loading ...</div>
-  // }
-
   return (
     <section
       className={cn(
@@ -42,15 +34,10 @@ export const NewsBlock: FC<INewsBlock> = ({ className }) => {
       )}
     >
       {/*Main news block */}
-      <div className='grid grid-cols-2 gap-4 rounded-lg border border-primary bg-tertiary p-4'>
-        <NewsItem />
-        <NewsItem />
-        <NewsItem />
-        <NewsItem />
-      </div>
+      <MainNewsBlock />
 
       {/*Sidebar (latest news) */}
-      <Sidebar className='md:flex' />
+      <Sidebar />
     </section>
   )
 }

@@ -7,7 +7,7 @@ import { RootState } from '../store'
 import { getRandomForSliderNews } from '@/libs/helpers/getRandomForSliderNews'
 import { newsCategoriesSort } from '@/libs/helpers/newsCategoriesSort'
 
-const getNewsSelector = (state: RootState) => {
+export const getNewsSelector = (state: RootState) => {
   return state.newsReducer.news
 }
 

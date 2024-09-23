@@ -13,7 +13,7 @@ export const Skeleton: FC<ISkeleton> = ({ className, spinnerSize = '5' }) => {
   return (
     <div
       className={cn(
-        'flex animate-pulse items-center justify-center rounded-lg bg-gray-400',
+        'flex animate-pulse items-center justify-center rounded-lg bg-transparent',
         className
       )}
     >
