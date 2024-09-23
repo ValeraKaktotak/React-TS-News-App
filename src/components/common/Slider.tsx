@@ -23,7 +23,6 @@ interface ISlider {
 
 export const Slider: FC<ISlider> = ({ className }) => {
   const sliderNews = useAppSelector(getSliderNews)
-  console.log(sliderNews)
 
   return (
     <div
@@ -72,7 +71,7 @@ export const Slider: FC<ISlider> = ({ className }) => {
             ))}
         </Swiper>
       ) : (
-        <Skeleton spinnerSize='8' className='h-[240px] w-full' />
+        <Skeleton spinnerSize='[50px]' className='h-[240px] w-full' />
       )}
     </div>
   )

@@ -26,3 +26,11 @@ export const getSliderNews = createSelector(getNewsSelector, (items) => {
   }
   return items
 })
+
+export const getSidebarNews = createSelector(getNewsSelector, (items) => {
+  if (items) {
+    const res = items.data.slice(25, 30)
+    return res
+  }
+  return items
+})
