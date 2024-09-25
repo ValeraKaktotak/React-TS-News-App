@@ -1,11 +1,7 @@
-import { useEffect, type FC } from 'react'
+import { type FC } from 'react'
 
 //Utils
 import { cn } from '@/libs/utils'
-
-//import { fetchNews } from '@/store/reducers/ActionCreators'
-import { fetchMockNews } from '@/store/reducers/NewsActionCreators'
-import { useAppDispatch } from '@/store/store'
 
 //Components
 import { MainNewsBlock } from '@/components/common/MainNewsBlock'
@@ -16,16 +12,6 @@ interface INewsBlock {
 }
 
 export const NewsBlock: FC<INewsBlock> = ({ className }) => {
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    //only 500 real requests
-    //dispatch(fetchNews())
-
-    //mock data
-    dispatch(fetchMockNews())
-  }, [dispatch])
-
   return (
     <section
       className={cn(

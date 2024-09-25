@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 //Types
-import type { AppDispatch } from '@/store/store'
+import type { AppDispatch, RootState } from '@/store/store'
 import type { INews } from '@/types/news-types'
 
 //API
@@ -42,3 +42,19 @@ export const fetchMockNews = () => (dispatch: AppDispatch) => {
     )
   }
 }
+
+//News block fetching
+export const fetchNewsBlock =
+  (page: number = 0) =>
+  (dispatch: AppDispatch, getState: () => RootState) => {
+    try {
+      const state = getState()
+      const newsBlockState = state.newsReducer.news?.data
+      if (newsBlockState) {
+        const res = newsBlockState.slice(page * 10, page * 10 + 10)
+        dispatch(newsSlice.actions.newsBlockFetching(res))
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
