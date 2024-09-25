@@ -1,19 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 //Types
-import type { INews } from '@/types/news-types'
+import type { INews, ISingleNews } from '@/types/news-types'
 
 //ActionCreations
 import { fetchNews } from '@/store/reducers/NewsActionCreators'
 
 interface INewsState {
   news: INews | null
+  newsBlock: ISingleNews[]
   isLoading: boolean
   error: string | undefined
 }
 
 const initialState: INewsState = {
   news: null,
+  newsBlock: [],
   isLoading: false,
   error: ''
 }
@@ -32,6 +34,9 @@ export const newsSlice = createSlice({
     newsMockFetchingError(state, action) {
       state.error = action.payload
       state.isLoading = false
+    },
+    newsBlockFetching(state, action) {
+      state.newsBlock = [...state.newsBlock, ...action.payload]
     }
   },
   extraReducers: (builder) => {

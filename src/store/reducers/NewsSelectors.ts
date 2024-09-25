@@ -11,6 +11,14 @@ export const getNewsSelector = (state: RootState) => {
   return state.newsReducer.news
 }
 
+export const getNewsBlockSelector = (state: RootState) => {
+  return state.newsReducer.newsBlock
+}
+
+export const isLoadedSelector = (state: RootState) => {
+  return state.newsReducer.isLoading
+}
+
 export const getCategories = createSelector(getNewsSelector, (items) => {
   if (items) {
     const cats = newsCategoriesSort(items.data)
