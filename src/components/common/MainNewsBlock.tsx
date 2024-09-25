@@ -4,9 +4,8 @@ import { NewsItem } from './NewsItem'
 //Utils
 import { cn } from '@/libs/utils'
 
-//Types
-
 //Store
+import { fetchNewsBlock } from '@/store/reducers/NewsActionCreators'
 import {
   getNewsBlockSelector,
   isLoadedSelector
@@ -15,7 +14,6 @@ import { useAppDispatch, useAppSelector } from '@/store/store'
 
 //Component
 import { Skeleton } from '@/components/common/Skeleton'
-import { fetchNewsBlock } from '@/store/reducers/NewsActionCreators'
 
 interface IMainNewsBlock {
   className?: string
