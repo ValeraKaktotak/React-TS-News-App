@@ -32,7 +32,7 @@ export const NewsItem: FC<INewsItem> = ({ className, newsData }) => {
     >
       <div className='absolute bottom-0 left-0 right-0 top-[55%] flex flex-col justify-between bg-gray-500/70 p-2'>
         <p className='line-clamp-2'>{title}</p>
-        <Link to='#' className='w-24'>
+        <Link to={`/news/${title}`} className='w-24'>
           <Button text='Read more' />
         </Link>
       </div>
