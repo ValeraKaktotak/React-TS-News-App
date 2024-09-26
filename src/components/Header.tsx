@@ -3,7 +3,8 @@ import type { FC } from 'react'
 //Components
 import { Logo } from '@/components/common/Logo'
 import { ThemeToggler } from '@/components/common/ThemeToggler'
-import { ProfileButton } from './common/ProfileButton'
+import { Link } from 'react-router-dom'
+import { Button } from './common/Button'
 import { SearchComponent } from './common/SearchComponent'
 
 export const Header: FC = () => {
@@ -14,7 +15,9 @@ export const Header: FC = () => {
         <SearchComponent />
         <div className='flex items-center'>
           <ThemeToggler />
-          <ProfileButton />
+          <Link to='/contact'>
+            <Button>Contact us</Button>
+          </Link>
         </div>
       </div>
     </section>
