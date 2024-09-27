@@ -19,6 +19,25 @@ export const isLoadedSelector = (state: RootState) => {
   return state.newsReducer.isLoading
 }
 
+export const getPaginationBlockNews = (page: number) =>
+  createSelector(getNewsBlockSelector, (items) => {
+    if (items) {
+      const res = items.slice(0, page * 10 + 10)
+      return res
+    }
+    return []
+  })
+
+export const getNewsBlockCountSelector = createSelector(
+  getNewsBlockSelector,
+  (items) => {
+    if (items) {
+      return items.length
+    }
+    return 0
+  }
+)
+
 export const getSearchNews = (query: string) =>
   createSelector(getNewsSelector, (items) => {
     if (query === '') {

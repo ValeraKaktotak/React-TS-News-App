@@ -43,16 +43,20 @@ export const fetchMockNews = () => (dispatch: AppDispatch) => {
   }
 }
 
-//News block fetching
-export const fetchNewsBlock =
-  (page: number = 0) =>
+//Category News block fetching
+export const fetchCategoryNewsBlock =
+  (category: string = '') =>
   (dispatch: AppDispatch, getState: () => RootState) => {
     try {
       const state = getState()
       const newsBlockState = state.newsReducer.news?.data
       if (newsBlockState) {
-        const res = newsBlockState.slice(page * 10, page * 10 + 10)
-        dispatch(newsSlice.actions.newsBlockFetching(res))
+        if (category === '') {
+          dispatch(newsSlice.actions.categoryNewsBlockFetching(newsBlockState))
+          return false
+        }
+        const res = newsBlockState.filter((news) => news.category === category)
+        dispatch(newsSlice.actions.categoryNewsBlockFetching(res))
       }
     } catch (error) {
       console.log(error)
