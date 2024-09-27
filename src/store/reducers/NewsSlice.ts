@@ -29,6 +29,7 @@ export const newsSlice = createSlice({
     },
     newsMockFetchingSuccess(state, action) {
       state.news = action.payload
+      state.newsBlock = action.payload.data
       state.isLoading = false
     },
     newsMockFetchingError(state, action) {
@@ -37,6 +38,9 @@ export const newsSlice = createSlice({
     },
     newsBlockFetching(state, action) {
       state.newsBlock = [...state.newsBlock, ...action.payload]
+    },
+    categoryNewsBlockFetching(state, action) {
+      state.newsBlock = [...action.payload]
     }
   },
   extraReducers: (builder) => {
