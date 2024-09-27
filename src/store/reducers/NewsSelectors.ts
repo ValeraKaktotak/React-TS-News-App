@@ -19,6 +19,18 @@ export const isLoadedSelector = (state: RootState) => {
   return state.newsReducer.isLoading
 }
 
+export const getSearchNews = (query: string) =>
+  createSelector(getNewsSelector, (items) => {
+    if (query === '') {
+      return []
+    }
+    if (items) {
+      const res = items.data.filter((item) => item.title.includes(query))
+      return res
+    }
+    return []
+  })
+
 export const getCategories = createSelector(getNewsSelector, (items) => {
   if (items) {
     const cats = newsCategoriesSort(items.data)

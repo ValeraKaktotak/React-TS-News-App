@@ -6,8 +6,12 @@ import { useClickAway, useDebounce } from 'react-use'
 //Utils
 import { cn } from '@/libs/utils'
 
+//Images
+import noImage from '@/assets/images/no-image.png'
+
 //Types
-import type { INews } from '@/types/news-types'
+import { getSearchNews } from '@/store/reducers/NewsSelectors'
+import { useAppSelector } from '@/store/store'
 
 interface ISearchComponent {
   className?: string
@@ -16,7 +20,8 @@ interface ISearchComponent {
 export const SearchComponent: FC<ISearchComponent> = ({ className }) => {
   const [focused, setFocused] = useState<boolean>(false)
   const [searchQuery, setSearchQuery] = useState<string>('')
-  const [searchedNews, setSearchedNews] = useState<INews | null>(null)
+  const [debouncedSearchQuery, setDebouncedSearchQuery] = useState<string>('')
+  const searchedNews = useAppSelector(getSearchNews(debouncedSearchQuery))
 
   const ref = useRef(null)
 
@@ -27,20 +32,13 @@ export const SearchComponent: FC<ISearchComponent> = ({ className }) => {
   const onClickItem = () => {
     setFocused(false)
     setSearchQuery('')
-    setSearchedNews(null)
   }
 
   useDebounce(
-    async () => {
-      try {
-        //console.log(searchQuery)
-        //const res = await fetchSearchNews(searchQuery)
-        //setProducts(res)
-      } catch (error) {
-        console.log(error)
-      }
+    () => {
+      setDebouncedSearchQuery(searchQuery)
     },
-    250,
+    300,
     [searchQuery]
   )
 
@@ -66,23 +64,23 @@ export const SearchComponent: FC<ISearchComponent> = ({ className }) => {
           }
         />
 
-        {searchedNews && searchedNews?.data.length > 0 && (
+        {searchedNews && searchedNews?.length > 0 && (
           <div
             className={cn(
               'invisible absolute top-14 z-30 w-full rounded-xl bg-white py-2 opacity-0 shadow-md transition-all duration-200',
               focused && 'visible top-12 opacity-100'
             )}
           >
-            {searchedNews.data.map((news) => (
+            {searchedNews.map((news, i) => (
               <Link
-                key={news.title}
-                to={`#`}
-                className='hover:bg-primary/20 flex w-full items-center gap-3 px-3 py-2'
+                key={i}
+                to={`/news/${news.title}`}
+                className='hover:bg-primary/20 flex w-full items-center gap-3 px-3 py-2 text-[#0c0a09]'
                 onClick={onClickItem}
               >
                 <img
                   className='h-8 w-8 rounded-sm'
-                  src={news.image}
+                  src={news.image || noImage}
                   alt={news.title}
                 />
                 <span>{news.title}</span>
