@@ -21,7 +21,7 @@ export const SidebarItem: FC<ISidebarItem> = ({ className, newsData }) => {
 
   return (
     <Link
-      to='#'
+      to={`/news/${title}`}
       className={cn(
         'relative overflow-hidden rounded-lg border border-primary bg-cover bg-center',
         className

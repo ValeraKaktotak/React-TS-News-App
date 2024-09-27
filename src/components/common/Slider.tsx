@@ -66,7 +66,7 @@ export const Slider: FC<ISlider> = ({ className }) => {
             sliderNews?.length > 0 &&
             sliderNews.map((news, i) => (
               <SwiperSlide key={i} className='flex justify-center'>
-                <SliderItem fetchedUrl={news.image} />
+                <SliderItem fetchedUrl={news.image} title={news.title} />
               </SwiperSlide>
             ))}
         </Swiper>
