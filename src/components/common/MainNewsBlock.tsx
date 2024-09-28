@@ -25,8 +25,6 @@ export const MainNewsBlock: FC<IMainNewsBlock> = ({ className }) => {
   const newsBlockData = useAppSelector(getPaginationBlockNews(pageIndex))
   const newsData = useAppSelector(getNewsSelector)
 
-  console.log(scrollUp)
-
   const upHandler = () => {
     window.scrollTo({
       top: 0,

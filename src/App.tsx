@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 
 //Store
-import { fetchMockNews } from './store/reducers/NewsActionCreators'
+import { fetchNews } from './store/reducers/NewsActionCreators'
 import { useAppDispatch } from './store/store'
 
 //Layout
@@ -13,10 +13,10 @@ const App: React.FC = () => {
 
   useEffect(() => {
     //only 500 real requests
-    //dispatch(fetchNews())
+    dispatch(fetchNews())
 
     //mock data
-    dispatch(fetchMockNews())
+    //dispatch(fetchMockNews())
   }, [dispatch])
   return (
     <div className='bg-tertiary transition-colors duration-500 ease-in-out'>

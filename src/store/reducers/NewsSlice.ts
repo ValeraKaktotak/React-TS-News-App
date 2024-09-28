@@ -49,6 +49,7 @@ export const newsSlice = createSlice({
         state.isLoading = false
         state.error = ''
         state.news = action.payload
+        state.newsBlock = action.payload.data
       })
       .addCase(fetchNews.pending, (state) => {
         state.isLoading = true
