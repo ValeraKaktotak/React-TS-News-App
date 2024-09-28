@@ -68,7 +68,7 @@ export const getSliderNews = createSelector(getNewsSelector, (items) => {
 
 export const getSidebarNews = createSelector(getNewsSelector, (items) => {
   if (items) {
-    const res = items.data.slice(25, 30)
+    const res = getRandomForSliderNews(items, 5)
     return res
   }
   return items
