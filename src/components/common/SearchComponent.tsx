@@ -49,7 +49,7 @@ export const SearchComponent: FC<ISearchComponent> = ({ className }) => {
         ref={ref}
         className={cn(
           className,
-          'relative z-30 flex h-11 flex-1 justify-between rounded-2xl'
+          'relative z-30 flex h-11 w-full flex-1 justify-between rounded-2xl'
         )}
       >
         <Search className='absolute left-3 top-1/2 h-5 translate-y-[-50%] text-gray-800' />

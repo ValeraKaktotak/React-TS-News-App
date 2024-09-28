@@ -30,12 +30,12 @@ const SingleNews: FC<ISingleNews> = ({ className }) => {
     return (
       <section
         className={cn(
-          'mt-10 rounded-md border border-primary bg-tertiary p-10',
+          'mt-10 rounded-md border border-primary bg-tertiary p-2 sm:p-10',
           className
         )}
       >
         {data && title ? (
-          <div className='grid grid-cols-2'>
+          <div className='grid grid-cols-1 lg:grid-cols-2'>
             <div className='p-2'>
               <img
                 src={image}

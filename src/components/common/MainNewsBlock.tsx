@@ -67,7 +67,7 @@ export const MainNewsBlock: FC<IMainNewsBlock> = ({ className }) => {
       )}
     >
       {newsBlockData && newsData && newsBlockData.length > 0 ? (
-        <div className='grid grid-cols-2 gap-4'>
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
           {newsBlockData.map((news, i) => (
             <NewsItem key={i} newsData={news} />
           ))}

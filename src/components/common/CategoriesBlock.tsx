@@ -25,11 +25,9 @@ export const CategoriesBlock: FC<ICategoriesBlock> = ({ className }) => {
   }
 
   return (
-    <div
-      className={cn('mt-10 flex flex-wrap justify-center gap-10', className)}
-    >
+    <div className={cn('mt-5 md:mt-10', className)}>
       {categories ? (
-        <div className='flex flex-nowrap gap-4'>
+        <div className='flex w-full flex-wrap justify-center gap-4'>
           <Button
             onClick={() => {
               clickHandler('')

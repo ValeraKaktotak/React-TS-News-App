@@ -33,7 +33,7 @@ const ContactUs: FC<IContactUs> = ({ className }) => {
 
   return (
     <section className={cn('', className)}>
-      <div className='mt-10 rounded-md border border-primary bg-tertiary p-10'>
+      <div className='mt-10 rounded-md border border-primary bg-tertiary p-2 sm:p-10'>
         <h2 className='text-[32px] font-extrabold text-primary'>Contact Us</h2>
         <h4 className='font-extrabold text-primary'>SEND YOUR MESSAGE</h4>
 
